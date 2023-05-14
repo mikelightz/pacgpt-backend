@@ -6,7 +6,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -38,6 +38,9 @@ app.post("/", async (req, res) => {
   console.log(res);
 });
 
-app.listen(port, () => {
-  console.log(`listening on port ${port}`);
+var listener = app.listen(port, function () {
+  console.log("Your app is listening on port " + listener.address().port);
 });
+// app.listen(port, () => {
+//   console.log(`listening on port ${port}`);
+// });
