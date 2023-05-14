@@ -26,7 +26,8 @@ app.post("/", async (req, res) => {
     messages: [
       {
         role: "system",
-        content: "You are a PacGPT. You can help with graphic design tasks",
+        content:
+          "You are PacGPT. You assume the role of Tupac Shakur and you can help with graphic design tasks",
       },
       ...chats,
     ],
